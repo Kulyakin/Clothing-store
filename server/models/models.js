@@ -26,7 +26,7 @@ const Item = sequelize.define('item', {
 
 const Type = sequelize.define('type', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.INTEGER, unique: true, allowNull: false }
+    name: { type: DataTypes.STRING, unique: true, allowNull: false }
 })
 
 const Brand = sequelize.define('brand', {
@@ -51,7 +51,7 @@ const TypeBrand = sequelize.define('type_brand', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 })
 
-// Связывание моделей между собой
+// Установка связей между моделями
 
 User.hasOne(Basket)
 Basket.belongsTo(User)
@@ -74,7 +74,7 @@ Rating.belongsTo(Item)
 Item.hasMany(BasketItem)
 BasketItem.belongsTo(Item)
 
-Item.hasMany(ItemInfo)
+Item.hasMany(ItemInfo, { as: 'info' })
 ItemInfo.belongsTo(Item)
 
 Type.belongsToMany(Brand, { through: TypeBrand })

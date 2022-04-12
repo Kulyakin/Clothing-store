@@ -7,7 +7,7 @@ class UserController {
     async check(req, res, next) {
         const { id } = req.query
         if (!id) {
-            return next(ApiError.badRequest('zalupa'))
+            return next(ApiError.badRequest('gavno'))
         }
         res.json(id)
     }
