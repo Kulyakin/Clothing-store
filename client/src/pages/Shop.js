@@ -1,17 +1,20 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col'
-import { Container } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import TypeBar from '../components/TypeBar'
+import BrandBar from '../components/BrandBar'
 
 const Shop = () => {
     return (
         <Container>
-            <div className="mt-3">
+            <Row className="mt-3">
                 <Col md={2}>
                     <TypeBar />
                 </Col>
-                <Col md={10}></Col>
-            </div>
+                <Col md={10}>
+                    <BrandBar/>
+                </Col>
+            </Row>
         </Container>
     )
 }
