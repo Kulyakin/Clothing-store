@@ -42,6 +42,7 @@ export default class ItemStore {
                 img: 'c4042e78-9847-47f7-87bd-97c43be89663.jpg'
             }
         ]
+        this._selectedType = {}
         makeAutoObservable(this)
     }
 
@@ -56,6 +57,11 @@ export default class ItemStore {
     setItems(items) {
         this._items = items
     }
+
+    setSelectedType(type) {
+        this._selectedType = type
+    }
+
     get types() {
         return this._types
     }
@@ -66,5 +72,9 @@ export default class ItemStore {
 
     get items() {
         return this._items
+    }
+
+    get selectedType() {
+        return this._selectedType
     }
 }
