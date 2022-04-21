@@ -15,8 +15,8 @@ const NavBar = observer(() => {
         <Navbar bg="dark" variant="dark">
             <Container>
                 <NavLink
-                    className="ml-auto"
-                    style={{ color: 'white' }}
+                    className="ml-auto text-decoration-none"
+                    style={{ color: 'white', fontSize: '24px' }}
                     to={SHOP_ROUTE}
                 >
                     Cloth-Store
