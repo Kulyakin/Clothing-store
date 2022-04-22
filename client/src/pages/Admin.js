@@ -1,7 +1,12 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 const Admin = () => {
-    return <div>Admin</div>
+    return (
+        <Container>
+            <div>Admin</div>
+        </Container>
+    )
 }
 
 export default Admin
