@@ -11,8 +11,8 @@ const Item = ({ item }) => {
             className={'mt-3'}
             onClick={() => navigate(ITEM_ROUTE + '/' + item.id)}
         >
-            <Card style={{ width: 150, cursor: 'pointer' }} border={'light'}>
-                <Image width={150} height={150} src={item.img}></Image>
+            <Card style={{ width: 220, cursor: 'pointer' }} border={'light'}>
+                <Image width={220} height={270} src={item.img}></Image>
                 <div className="d-flex justify-content-between align-items-center">
                     <div>Zara...</div>
                     <div className="d-flex align-items-center">
