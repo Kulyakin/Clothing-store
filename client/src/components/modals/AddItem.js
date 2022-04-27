@@ -1,14 +1,17 @@
 import React, { useContext, useState } from 'react'
 import { Context } from '../../index'
-import { Button, Modal, Form, Dropdown } from 'react-bootstrap'
+import {
+    Button,
+    Modal,
+    Form,
+    Dropdown,
+    InputGroup,
+    FormControl
+} from 'react-bootstrap'
 
 const AddItem = ({ show, onHide }) => {
     const { item } = useContext(Context)
-    const [info, setInfo] = useState('')
 
-    const addInfo = () => {
-        setInfo()
-    }
     console.log(item)
     return (
         <Modal show={show} onHide={onHide} size="lg" centered>
@@ -47,19 +50,39 @@ const AddItem = ({ show, onHide }) => {
                         placeholder="Enter item name"
                         className="mt-3"
                     ></Form.Control>
+                    <InputGroup className="mt-3">
+                        <InputGroup.Text>₽</InputGroup.Text>
+                        <FormControl
+                            type="number"
+                            placeholder="Enter item price"
+                        />
+                    </InputGroup>
+                    <Form.Label className="mt-3">Add four images</Form.Label>
                     <Form.Control
-                        placeholder="Enter item price"
-                        className="mt-3"
-                        type="number"
+                        placeholder="Enter item image"
+                        type="file"
                     ></Form.Control>
                     <Form.Control
                         placeholder="Enter item image"
                         className="mt-3"
                         type="file"
                     ></Form.Control>
-                    <Button className="mt-3" variant="light">
-                        Add info
-                    </Button>
+                    <Form.Control
+                        placeholder="Enter item image"
+                        className="mt-3"
+                        type="file"
+                    ></Form.Control>
+                    <Form.Control
+                        placeholder="Enter item image"
+                        className="mt-3"
+                        type="file"
+                    ></Form.Control>
+                    <Form.Label className="mt-3">Info about item</Form.Label>
+                    <Form.Control
+                        placeholder="Enter item info"
+                        as="textarea"
+                        rows={3}
+                    ></Form.Control>
                 </Form>
             </Modal.Body>
             <Modal.Footer>

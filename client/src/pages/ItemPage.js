@@ -11,7 +11,8 @@ const ItemPage = observer(() => {
         img: 'https://www.terranovastyle.ru/ru_ru/media/catalog/product/cache/81c07efe08d5eb10dd5c992ecbfb2edf/d/z/dzhinsy-fasona-mom-mom-34-sab0052606001s350-kw-dzhinsy-dlinnye-kw-sinij_4_1.jpg',
         img2: 'https://www.terranovastyle.ru/ru_ru/media/catalog/product/cache/81c07efe08d5eb10dd5c992ecbfb2edf/d/z/dzhinsy-fasona-mom-mom-34-sab0052606001s350-kw-dzhinsy-dlinnye-kw-sinij_5_1.jpg',
         img3: 'https://www.terranovastyle.ru/ru_ru/media/catalog/product/cache/81c07efe08d5eb10dd5c992ecbfb2edf/d/z/dzhinsy-fasona-mom-mom-34-sab0052606001s350-kw-dzhinsy-dlinnye-kw-sinij_3_1.jpg',
-        img4: 'https://www.terranovastyle.ru/ru_ru/media/catalog/product/cache/81c07efe08d5eb10dd5c992ecbfb2edf/d/z/dzhinsy-fasona-mom-mom-34-sab0052606001s350-kw-dzhinsy-dlinnye-kw-sinij_2_1.jpg'
+        img4: 'https://www.terranovastyle.ru/ru_ru/media/catalog/product/cache/81c07efe08d5eb10dd5c992ecbfb2edf/d/z/dzhinsy-fasona-mom-mom-34-sab0052606001s350-kw-dzhinsy-dlinnye-kw-sinij_2_1.jpg',
+        info: 'Укороченная женская футболка из хлопкового джерси с принтом спереди. Модель облегающего силуэта в рубчик с небольшими вырезами по бокам и декоративной шнуровкой по низу.'
     }
     return (
         <Container className="mt-3">
@@ -40,12 +41,7 @@ const ItemPage = observer(() => {
                         <div>{item.rating + ' rating is there'}</div>
                         <h3>{item.price + ' rub'}</h3>
                         <div>About</div>
-                        <div>
-                            Укороченная женская футболка из хлопкового джерси с
-                            принтом спереди. Модель облегающего силуэта в рубчик
-                            с небольшими вырезами по бокам и декоративной
-                            шнуровкой по низу.
-                        </div>
+                        <div>{item.info}</div>
                         <Button
                             onClick={() => alert('Work in progress')}
                             variant="outline-success"
