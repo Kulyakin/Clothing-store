@@ -32,12 +32,15 @@ const Admin = () => {
             >
                 Add item
             </Button>
-            <AddType show={typeVisable} onHide={() => setTypeVisable(false)} />
+            <AddType 
+                show={typeVisable}
+                onHide={() => setTypeVisable(false)} />
             <AddBrand
                 show={brandVisable}
                 onHide={() => setBrandVisable(false)}
             />
-            <AddItem show={itemVisable} onHide={() => setItemVisable(false)} />
+            <AddItem show={itemVisable}
+                onHide={() => setItemVisable(false)} />
         </Container>
     )
 }
