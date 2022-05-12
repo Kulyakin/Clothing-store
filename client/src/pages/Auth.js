@@ -4,10 +4,10 @@ import { Button, Card, Container, Form } from 'react-bootstrap'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Context } from '..'
 import { registration, login } from '../http/userAPI'
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/constatns'
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/constatns'
 
 const Auth = observer(() => {
-    const {user} = useContext(Context)
+    const { user } = useContext(Context)
     const location = useLocation()
     const navigate = useNavigate()
     const isLogin = location.pathname === LOGIN_ROUTE
@@ -20,14 +20,16 @@ const Auth = observer(() => {
             if (isLogin) {
                 data = await login(email, password)
             } else {
+                console.log(data)
                 data = await registration(email, password)
                 console.log(data)
             }
             user.setUser(user)
             user.setIsAuth(true)
-            navigate(LOGIN_ROUTE)
+            console.log(user)
+            navigate(SHOP_ROUTE)
         } catch (error) {
-            alert(error.response.data.message)
+            alert(error.response)
         }
     }
 
@@ -43,14 +45,14 @@ const Auth = observer(() => {
                         className="mt-4"
                         placeholder="E-mail"
                         value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
                     ></Form.Control>
                     <Form.Control
                         className="mt-3"
                         placeholder="Password"
-                        type='password'
+                        type="password"
                         value={password}
-                        onChange={p => setPassword(p.target.value)}
+                        onChange={(p) => setPassword(p.target.value)}
                     ></Form.Control>
                     <div className="d-flex flex-row justify-content-between mt-3 pl-3 pr-3">
                         {isLogin ? (
@@ -66,8 +68,7 @@ const Auth = observer(() => {
                                 <NavLink to={LOGIN_ROUTE}>Sign In</NavLink>
                             </div>
                         )}
-                        <Button variant="outline-dark"
-                        onClick={click}>
+                        <Button variant="outline-dark" onClick={click}>
                             {isLogin ? 'Log in' : 'Sign up'}
                         </Button>
                     </div>
