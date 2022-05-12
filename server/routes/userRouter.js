@@ -5,6 +5,6 @@ const authMiddleware = require('../middleware/authMiddleware')
 
 router.post('/registration', userController.registration)
 router.post('/login', userController.login)
-router.get('/auth', authMiddleware, userController.check) // авторизация по gvt токену
+router.get('/auth', authMiddleware, userController.check) // авторизация по gwt токену
 
 module.exports = router
