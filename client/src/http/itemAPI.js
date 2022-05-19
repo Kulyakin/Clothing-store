@@ -3,18 +3,27 @@ import jwt_decode from 'jwt-decode'
 
 export const createType = async (type) => {
     const { data } = await $authHost.post('api/type', type)
-    localStorage.setItem('token', data.jwttoken)
-    return jwt_decode(data.jwttoken)
+    return data
 }
 
-export const fetchTypes = async (email, password) => {
-    const { data } = await $authHost.post('api/user/login', { email, password })
+export const fetchTypes = async () => {
+    const { data } = await $authHost.get('api/type')
     localStorage.setItem('token', data.jwttoken)
-    return jwt_decode(data.jwttoken)
+    return data
 }
 
-export const check = async () => {
-    const { data } = await $authHost.get('api/user/auth')
+export const createBrand = async (brand) => {
+    const { data } = await $authHost.post('api/brand', brand)
+    return data
+}
+
+export const fetchBrands = async () => {
+    const { data } = await $authHost.get('api/brand')
     localStorage.setItem('token', data.jwttoken)
-    return jwt_decode(data.jwttoken)
+    return data
+}
+
+export const createItem = async (item) => {
+    const { data } = await $authHost.post('api/item', item)
+    return data
 }

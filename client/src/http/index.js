@@ -14,5 +14,6 @@ const authInterceptor = (config) => {
 }
 
 $authHost.interceptors.request.use(authInterceptor)
+console.log($authHost.interceptors.request.use(authInterceptor))
 
 export { $host, $authHost }
