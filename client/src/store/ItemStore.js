@@ -2,16 +2,8 @@ import { makeAutoObservable } from 'mobx'
 
 export default class ItemStore {
     constructor() {
-        this._types = [
-            { id: 1, name: 'Джинсы' },
-            { id: 2, name: 'Брюки' },
-            { id: 3, name: 'Юбки' },
-            { id: 4, name: 'Трусики' }
-        ]
-        this._brands = [
-            { id: 1, name: 'Terranova' },
-            { id: 2, name: 'Zara' }
-        ]
+        this._types = []
+        this._brands = []
         this._items = [
             {
                 id: 1,

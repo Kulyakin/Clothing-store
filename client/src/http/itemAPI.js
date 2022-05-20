@@ -1,5 +1,4 @@
-import { $host, $authHost } from './index'
-import jwt_decode from 'jwt-decode'
+import { $authHost } from './index'
 
 export const createType = async (type) => {
     const { data } = await $authHost.post('api/type', type)
@@ -8,7 +7,6 @@ export const createType = async (type) => {
 
 export const fetchTypes = async () => {
     const { data } = await $authHost.get('api/type')
-    localStorage.setItem('token', data.jwttoken)
     return data
 }
 
@@ -19,7 +17,6 @@ export const createBrand = async (brand) => {
 
 export const fetchBrands = async () => {
     const { data } = await $authHost.get('api/brand')
-    localStorage.setItem('token', data.jwttoken)
     return data
 }
 
