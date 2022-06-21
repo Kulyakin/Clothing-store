@@ -21,7 +21,11 @@ const Item = sequelize.define('item', {
     name: { type: DataTypes.STRING, unique: true, allowNull: false },
     price: { type: DataTypes.INTEGER, allowNull: false },
     rating: { type: DataTypes.INTEGER, defaultValue: 0 },
-    img: { type: DataTypes.STRING, allowNull: false }
+    infoAboutItem: { type: DataTypes.STRING, allowNull: false },
+    img: { type: DataTypes.STRING, allowNull: false },
+    img2: { type: DataTypes.STRING, allowNull: false },
+    img3: { type: DataTypes.STRING, allowNull: false },
+    img4: { type: DataTypes.STRING, allowNull: false }
 })
 
 const Type = sequelize.define('type', {

@@ -12,9 +12,9 @@ const Item = ({ item }) => {
             onClick={() => navigate(ITEM_ROUTE + '/' + item.id)}
         >
             <Card style={{ width: 220, cursor: 'pointer' }} border={'light'}>
-                <Image width={220} height={270} src={item.img}></Image>
+                <Image width={220} height={270} src={process.env.REACT_APP_API_URL + item.img}></Image>
                 <div className="d-flex justify-content-between align-items-center">
-                    <div>Zara...</div>
+                    <div>{item.brand}</div>
                     <div className="d-flex align-items-center">
                         <div>{item.rating}</div>
                         <Image></Image>

@@ -31,7 +31,13 @@ app.get('/', (req, res) => {
 const start = async () => {
     try {
         await sequelize.authenticate()
-        await sequelize.sync()
+        await sequelize.sync()  // Синхронизация модели с таблицей
+/*
+        User.sync() — создает таблицу при отсутствии (существующая таблица остается неизменной)
+User.sync({ force: true }) — удаляет существующую таблицу и создает новую
+User.sync({ alter: true }) — приводит таблицу в соответствие с моделью
+*/
+
         app.listen(PORT, () => console.log(`Server started on ${PORT} port`))
     } catch (warning) {
         console.log('warning')
